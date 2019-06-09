@@ -12,8 +12,6 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout LayoutTotal;
     private TextView Regioes;
     private TextView Estados;
-
-    private LinearLayout layout;
     private int contR = 0;
     private int contE = 1;
 
@@ -34,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
 
         LayoutTotal = (LinearLayout) findViewById(R.id.LayoutTotal);
         Regioes = (TextView) findViewById(R.id.Regiao);
-        Estados = (TextView) findViewById(R.id.Estados);
+        Estados = (TextView) findViewById(R.id.Estado);
 
 
 
-        layout.setOnTouchListener(new OnSwipeTouchListener(this) {
+        LayoutTotal.setOnTouchListener(new OnSwipeTouchListener(this) {
 
             @Override
             public void onSwipeRight() {
@@ -46,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 if (contE > 1 ) {
                     contE--;
                 }
+                Regioes.setText(regioes[contR][0]);
+                Estados.setText(regioes[contR][contE]);
             }
 
             @Override
@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                 if (contE <= regioes[contR][contE].length() || contE<9) {
                     contE++;
                 }
+                Regioes.setText(regioes[contR][0]);
+                Estados.setText(regioes[contR][contE]);
             }
 
             @Override
@@ -63,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 if (contR > 0) {
                     contR--;
                 }
+                Regioes.setText(regioes[contR][0]);
+                Estados.setText(regioes[contR][contE]);
             }
 
             @Override
@@ -72,12 +76,9 @@ public class MainActivity extends AppCompatActivity {
                 if (contR < 5) {
                     contR++;
                 }
+                Regioes.setText(regioes[contR][0]);
+                Estados.setText(regioes[contR][contE]);
             }
-
-
         });
-
     }
-
-
 }

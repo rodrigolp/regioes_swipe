@@ -27,7 +27,7 @@
             app:srcCompat="@drawable/esquerda" />
 
         <TextView
-            android:id="@+id/Estados"
+            android:id="@+id/Estado"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
